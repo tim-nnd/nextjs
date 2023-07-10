@@ -3,10 +3,7 @@ import styles from './page.module.css'
 
 export default function Home() {
 
-  redirect: {
-    destination: '/hello',
-    permanent: false,
-  }
+  redirect('https://www.tiket.com');
   
   return (
     <main className={styles.main}>
