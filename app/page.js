@@ -3,9 +3,6 @@ import styles from './page.module.css'
 import { redirect } from 'next/navigation';
 
 export default function Home() {
-
-  redirect('https://www.tiket.com');
-  
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -96,4 +93,13 @@ export default function Home() {
       </div>
     </main>
   )
+}
+
+export async function getServerSideProps() {
+  return {
+    redirect: {
+      destination: 'https://www.tiket.com',
+      permanent: false,
+    },
+  }
 }
