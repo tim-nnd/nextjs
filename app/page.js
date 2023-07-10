@@ -1,9 +1,13 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 
-redirect('www.tiket.com')
-
 export default function Home() {
+
+  redirect: {
+    destination: '/hello',
+    permanent: false,
+  }
+  
   return (
     <main className={styles.main}>
       <div className={styles.description}>
