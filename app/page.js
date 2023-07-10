@@ -95,7 +95,7 @@ export default function Home() {
   )
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
+export async function getStaticProps() {
   return {
     redirect: {
       destination: 'https://www.tiket.com',
