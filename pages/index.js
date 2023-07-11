@@ -96,6 +96,15 @@ export default function Home() {
 }
 
 export async function getServerSideProps() {
+  
+  const wait = await new Promise((resolve, reject) => {
+    for (let i = 0; i < 1000000; i++) {
+      if (i == 999999) {
+        resolve();
+      }
+    }
+  })
+
   return {
     redirect: {
       destination: 'https://www.tiket.com',
