@@ -97,13 +97,13 @@ export default function Home() {
 
 export async function getServerSideProps() {
   
-  const wait = await new Promise((resolve, reject) => {
-    for (let i = 0; i < 1000000000; i++) {
-      if (i == 999999999) {
-        resolve();
-      }
-    }
-  })
+//   const wait = await new Promise((resolve, reject) => {
+//     for (let i = 0; i < 1000000000; i++) {
+//       if (i == 999999999) {
+//         resolve();
+//       }
+//     }
+//   })
 
   return {
     redirect: {
