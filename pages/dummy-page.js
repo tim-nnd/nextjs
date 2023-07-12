@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import { redirect } from 'next/navigation';
 
 export default function Home() {
   return (
@@ -93,22 +92,4 @@ export default function Home() {
       </div>
     </main>
   )
-}
-
-export async function getServerSideProps() {
-  
-  const wait = await new Promise((resolve, reject) => {
-    for (let i = 0; i < 1000000000; i++) {
-      if (i == 999999999) {
-        resolve();
-      }
-    }
-  })
-
-  return {
-    redirect: {
-      destination: '/dummy-page',
-      permanent: false,
-    },
-  }
 }
