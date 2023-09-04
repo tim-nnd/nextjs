@@ -2,6 +2,21 @@ import Image from 'next/image'
 import styles from './page.module.css'
 
 export default function Home() {
+  const router = useRouter()
+
+  useEffect(() => {
+      router.beforePopState(({ url, as, options }) => {
+      // I only want to allow these two routes!
+      if (as !== '') {
+          // Have SSR render bad routes as a 404.
+          // window.location.href = as
+          return false
+      }
+
+      return true
+      })
+  }, [router])
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
