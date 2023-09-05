@@ -60,7 +60,7 @@ export default function Home() {
 
       <div className={styles.grid}>
         <a
-          href="/"
+          href="https://nextjs-tim-nnd.vercel.app/"
           className={styles.card}
           rel="noopener noreferrer"
         >
