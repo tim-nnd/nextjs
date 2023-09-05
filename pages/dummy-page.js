@@ -9,12 +9,14 @@ export default function Home() {
   useEffect(() => {
       router.beforePopState(({ url, as, options }) => {
       // I only want to allow these two routes!
-      if (as !== '') {
+      if (as !== '/') {
           // Have SSR render bad routes as a 404.
           // window.location.href = as
+          console.log("false")
           return false
       }
 
+      console.log("true")
       return true
       })
   }, [router])
@@ -58,9 +60,8 @@ export default function Home() {
 
       <div className={styles.grid}>
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="/"
           className={styles.card}
-          target="_blank"
           rel="noopener noreferrer"
         >
           <h2>
@@ -72,7 +73,6 @@ export default function Home() {
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
-          target="_blank"
           rel="noopener noreferrer"
         >
           <h2>
