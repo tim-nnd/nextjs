@@ -33,27 +33,24 @@ export default function Home() {
           });
       }
 
-      function getDeviceMotion () {
-        if ( typeof( DeviceMotionEvent ) !== "undefined" && typeof( DeviceMotionEvent.requestPermission ) === "function" ) {
+      function getDeviceOrientation () {
+        if (DeviceOrientationEvent && typeof( DeviceOrientationEvent.requestPermission ) === 'function' ) {
             // (optional) Do something before API request prompt.
-            DeviceMotionEvent.requestPermission()
-                .then( response => {
-                // (optional) Do something after API prompt dismissed.
-                if ( response == "granted" ) {
-                    window.addEventListener( "devicemotion", (e) => {
-                      console.log(`${e.acceleration.x} m/s2`);
-                    })
+            DeviceOrientationEvent.requestPermission()
+              .then((status) => {
+                if (status === 'granted') {
+                  console.log(`Orientation granted`);
                 }
             })
                 .catch( console.error )
         } else {
-            alert( "DeviceMotionEvent is not defined" );
+            alert( "DeviceOrientationEvent is not defined" );
         }
       }
 
       getLocalStream()
 
-      getDeviceMotion()
+      getDeviceOrientation()
   }, [router])
 
   return (
