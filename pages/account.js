@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 
 export default function Home() {
   return (
