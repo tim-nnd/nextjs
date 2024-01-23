@@ -2,6 +2,16 @@ import Image from 'next/image'
 import styles from './page.module.css'
 
 export default function Home() {
+  function printLetter(letter) {
+    console.log(letter);
+    
+    if (letter == "A") {
+      return true
+    }
+
+    return false
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
