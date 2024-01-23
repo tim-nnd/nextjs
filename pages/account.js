@@ -5,7 +5,7 @@ import NextScript from 'next/script'
 export default function Home() {
   return (
     <main className={styles.main}>
-      <NextScript dangerouslySetInnerHTML={{
+      <NextScript id="functions" dangerouslySetInnerHTML={{
           __html: `
           function printLetter(letter) {
             console.log(letter);
