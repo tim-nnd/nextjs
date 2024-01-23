@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import NextScript from 'next/script'
 
 export default function Home() {
   return (
