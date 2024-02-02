@@ -9,7 +9,7 @@ export default function Home() {
           __html: `
           function handleResponse() {
             var urlTextElement = document.getElementById('urlText');
-            urlTextElement.innerHTML
+            urlTextElement.innerHTML = "Current url with params " + window.location.href
         
             return true
           }
